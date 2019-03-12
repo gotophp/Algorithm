@@ -22,7 +22,7 @@ class BubSort
      * @Author: y
      * @Time: 2019/3/12   14:11
      */
-    public function bubSort()
+    public function bubSort(): array
     {
         $length = count($this->arr);
         if ($length <= 1) {

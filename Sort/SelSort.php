@@ -21,7 +21,7 @@ class SelSort
      * @Author: y
      * @Time: 2019/3/12   14:30
      */
-    public function selSort()
+    public function selSort(): array
     {
         $length = count($this->arr);
 
