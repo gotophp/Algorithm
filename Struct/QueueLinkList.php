@@ -38,9 +38,9 @@ Class QueueLinkList
     public function enqueue($e)
     {
         if ($this->tail == null) {
-            $this->head = $this->tail = new Node($e);
+            $this->head = $this->tail = new NodeTree($e);
         } else {
-            $this->tail = $this->tail->next = new Node($e, $this->tail->next);
+            $this->tail = $this->tail->next = new NodeTree($e, $this->tail->next);
         }
         $this->size ++;
     }

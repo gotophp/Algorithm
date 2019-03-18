@@ -19,7 +19,7 @@ Class LinkList
      */
     public function __construct()
     {
-        $this->dummy_head = new Node();
+        $this->dummy_head = new NodeTree();
         $this->size = 0;
     }
 
@@ -60,7 +60,7 @@ Class LinkList
             $prev = $prev->next;
         }
         # 增加链表
-        $prev->next = new Node($e, $prev->next);
+        $prev->next = new NodeTree($e, $prev->next);
         $this->size++;
     }
 

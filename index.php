@@ -100,3 +100,26 @@ $arr->print();*/
 //print_r($link->print());
 //echo $link->dequeue();
 //print_r($link->print());
+
+
+### 二分搜索树
+
+$bst = new BST();
+$bst->add(7);
+$bst->add(3);
+$bst->add(4);
+$bst->add(10);
+$bst->add(8);
+$bst->add(2);
+//$bst->print();
+//var_dump($bst->contains(5));
+//print_r($bst->each('pre'));
+//
+//print_r($bst->each('in'));
+//
+//print_r($bst->each('post'));
+//
+//print_r($bst->each('level'));
+
+print_r($bst->remove(3));
+$bst->print();
