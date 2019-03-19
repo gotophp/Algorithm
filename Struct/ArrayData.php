@@ -262,4 +262,26 @@ Class ArrayData
     {
         $this->length = $length;
     }
+
+    /**
+     * 数组互换
+     * @param $i
+     * @param $j
+     * @throws Exception
+     */
+    public function swap($i, $j)
+    {
+        if ($i < 0 || $i >= $this->size || $j < 0 || $j >= $this->size) {
+            throw new \Exception(__FUNCTION__ . '的index 超出边界！！！');
+        }
+        $temp = $this->data[$j];
+        $this->data[$j] = $this->data[$i];
+        $this->data[$i] = $temp;
+    }
+
+
+    public function getArray()
+    {
+        return $this->data;
+    }
 }

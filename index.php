@@ -28,48 +28,48 @@ function sub($start, $end) {
     return round($end - $start,4);
 }
 #排序比较
-$arr = range(1,1000);
-shuffle($arr);
-
-$start = start_time();
-$bub = new BubSort($arr);
-$bub->bubSort();
-$end = end_time();
-echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new InsSort($arr);
-$bub->insSort();
-$end = end_time();
-echo '插入排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new SelSort($arr);
-$bub->selSort();
-$end = end_time();
-echo '选择排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new QuiSort($arr);
-$bub->quiSort();
-$end = end_time();
-echo '快速排序1 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-$start = start_time();
-$bub = new QuiSort1($arr);
-$bub->quiSort();
-$end = end_time();
-echo '快速排序2 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new MegSort($arr);
-$bub->megSort();
-$end = end_time();
-echo '归并排序一百万条记录对比-> '. sub($start, $end) . '秒';
+//$arr = range(1,1000);
+//shuffle($arr);
+//
+//$start = start_time();
+//$bub = new BubSort($arr);
+//$bub->bubSort();
+//$end = end_time();
+//echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new InsSort($arr);
+//$bub->insSort();
+//$end = end_time();
+//echo '插入排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new SelSort($arr);
+//$bub->selSort();
+//$end = end_time();
+//echo '选择排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new QuiSort($arr);
+//$bub->quiSort();
+//$end = end_time();
+//echo '快速排序1 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//$start = start_time();
+//$bub = new QuiSort1($arr);
+//$bub->quiSort();
+//$end = end_time();
+//echo '快速排序2 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new MegSort($arr);
+//$bub->megSort();
+//$end = end_time();
+//echo '归并排序一百万条记录对比-> '. sub($start, $end) . '秒';
 ### 数组调试
 /*$arr = new ArrayData(5, true);
 $arr->addFirst(1);
@@ -178,3 +178,35 @@ $arr->print();*/
 //
 //print_r($bst->remove(3));
 //$bst->print();
+
+//$set = new TreeSet();
+//$set->add(3);
+//$set->add(2);
+//$set->add(4);
+//$set->add(4);
+//$set->print();
+//
+//$set = new LinkListMap();
+//$set->add('a', 1);
+//$set->add('b', 2);
+//$set->add('c', 3);
+//$set->add('a',3);
+//$set->remove('b');
+//$set->print();
+
+
+//$set = new BSTMap();
+//$set->add('a', 1);
+//$set->add('b', 2);
+//$set->add('c', 3);
+//$set->add('a',3);
+//$set->remove('b');
+//$set->print();
+
+$heap = new MaxHeap();
+
+$heap->add(2);
+$heap->add(7);
+$heap->add(6);
+$heap->add(10);
+$heap->print();
