@@ -7,7 +7,7 @@
  * Date: 2019/3/13
  * Time: 下午9:46
  */
-class QuiSort
+class QuiSort1
 {
     private $arr;
     public function __construct(array $arr = [])
@@ -40,8 +40,4 @@ class QuiSort
         $right = $this->quickSort($right);
         return array_merge($left, [$temp], $right);
     }
-
-
 }
-$obj = new QuiSort([5, 21, 41, 2, 53, 1, 213, 31,423, 21, 10]);
-print_r($obj->quiSort());

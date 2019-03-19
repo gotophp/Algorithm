@@ -37,11 +37,7 @@ class BubSort
                     $this->arr[$j + 1] = $temp;
                 }
             }
-            print_r($this->arr);
         }
         return $this->arr;
     }
 }
-
-$obj = new BubSort([1, 21, 41, 2, 53, 1, 213, 31,423, 21, 10]);
-print_r($obj->bubSort());

@@ -14,7 +14,62 @@ spl_autoload_register(function ($class){
     if (is_file('./Tree/' . $class . '.php')) {
         require_once './Tree/' . $class . '.php';
     }
+    if (is_file('./Sort/' . $class . '.php')) {
+        require_once './Sort/' . $class . '.php';
+    }
 });
+function start_time() {
+    return microtime(true);
+}
+function end_time() {
+    return microtime(true);
+}
+function sub($start, $end) {
+    return round($end - $start,4);
+}
+#排序比较
+$arr = range(1,1000);
+shuffle($arr);
+
+$start = start_time();
+$bub = new BubSort($arr);
+$bub->bubSort();
+$end = end_time();
+echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+
+$start = start_time();
+$bub = new InsSort($arr);
+$bub->insSort();
+$end = end_time();
+echo '插入排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+
+$start = start_time();
+$bub = new SelSort($arr);
+$bub->selSort();
+$end = end_time();
+echo '选择排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+
+$start = start_time();
+$bub = new QuiSort($arr);
+$bub->quiSort();
+$end = end_time();
+echo '快速排序1 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+$start = start_time();
+$bub = new QuiSort1($arr);
+$bub->quiSort();
+$end = end_time();
+echo '快速排序2 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+
+$start = start_time();
+$bub = new MegSort($arr);
+$bub->megSort();
+$end = end_time();
+echo '归并排序一百万条记录对比-> '. sub($start, $end) . '秒';
 ### 数组调试
 /*$arr = new ArrayData(5, true);
 $arr->addFirst(1);
@@ -103,23 +158,23 @@ $arr->print();*/
 
 
 ### 二分搜索树
-
-$bst = new BST();
-$bst->add(7);
-$bst->add(3);
-$bst->add(4);
-$bst->add(10);
-$bst->add(8);
-$bst->add(2);
+//
+//$bst = new BST();
+//$bst->add(7);
+//$bst->add(3);
+//$bst->add(4);
+//$bst->add(10);
+//$bst->add(8);
+//$bst->add(2);
+////$bst->print();
+////var_dump($bst->contains(5));
+////print_r($bst->each('pre'));
+////
+////print_r($bst->each('in'));
+////
+////print_r($bst->each('post'));
+////
+////print_r($bst->each('level'));
+//
+//print_r($bst->remove(3));
 //$bst->print();
-//var_dump($bst->contains(5));
-//print_r($bst->each('pre'));
-//
-//print_r($bst->each('in'));
-//
-//print_r($bst->each('post'));
-//
-//print_r($bst->each('level'));
-
-print_r($bst->remove(3));
-$bst->print();

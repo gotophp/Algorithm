@@ -47,5 +47,3 @@ class SelSort
         return $this->arr;
     }
 }
-$obj = new SelSort([1, 21, 41, 2, 53, 1, 213, 31,423, 21, 10]);
-print_r($obj->selSort());
