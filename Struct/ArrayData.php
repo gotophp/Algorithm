@@ -31,6 +31,12 @@ Class ArrayData
         $this->resize = $resize;
     }
 
+
+    public function newArr($arr = [])
+    {
+        $this->data = $arr;
+        $this->size = count($arr);
+    }
     /**
      * 获取数组中存储的个数
      * size 是从0开头 记住

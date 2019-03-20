@@ -178,7 +178,7 @@ $arr->print();*/
 //
 //print_r($bst->remove(3));
 //$bst->print();
-
+### 测试二分搜索树实现的set
 //$set = new TreeSet();
 //$set->add(3);
 //$set->add(2);
@@ -186,6 +186,7 @@ $arr->print();*/
 //$set->add(4);
 //$set->print();
 //
+### 测试链表实现的map
 //$set = new LinkListMap();
 //$set->add('a', 1);
 //$set->add('b', 2);
@@ -194,7 +195,7 @@ $arr->print();*/
 //$set->remove('b');
 //$set->print();
 
-
+#测试树实现的map
 //$set = new BSTMap();
 //$set->add('a', 1);
 //$set->add('b', 2);
@@ -203,10 +204,47 @@ $arr->print();*/
 //$set->remove('b');
 //$set->print();
 
-$heap = new MaxHeap();
+//$heap = new MaxHeap();
+//
+//$heap->add(90);
+//$heap->add(81);
+//$heap->add(72);
+//$heap->add(50);
+//$heap->add(80);
+//$heap->add(47);
+//$heap->add(50);
+//$heap->add(26);
+//$heap->add(40);
+//$heap->add(58);
+//$heap->add(1);
+////$heap->print();
+//echo $heap->extractMax() .PHP_EOL;
+//$heap->print();
 
-$heap->add(2);
-$heap->add(7);
-$heap->add(6);
-$heap->add(10);
-$heap->print();
+//$start = start_time();
+//$bub = new BubSort($arr);
+//$bub->bubSort();
+//$end = end_time();
+//echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+### 堆排序
+for ($i = 0; $i < 10; $i ++) {
+    $arr[] = random_int(1, 10000);
+}
+shuffle($arr);
+print_r($arr);
+$start = start_time();
+$heap = new MaxHeap($arr);
+sleep(1);
+$end = end_time();
+echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
+
+$start = start_time();
+$heap1 = new MaxHeap();
+
+foreach ($arr as $key => $val) {
+    $heap1->add($val);
+}
+sleep(1);
+$end = end_time();
+echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;

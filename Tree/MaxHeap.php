@@ -19,9 +19,20 @@ class MaxHeap
 {
     private $array;
 
-    public function __construct()
+    public function __construct($arr = [], $length = 30)
     {
-        $this->array = new ArrayData();
+        if (empty($arr)) {
+            $this->array = new ArrayData($length);
+        } else {
+            $this->array = new ArrayData($length);
+            $this->array->newArr($arr);
+            # 进行堆排序
+
+            for ($i = $this->parent($this->getSize() - 1); $i >= 0; $i--) {
+                # 对应的元素一个个小浮
+                $this->siftDown($i);
+            }
+        }
     }
 
     /**
@@ -94,13 +105,73 @@ class MaxHeap
     private function siftUp($index)
     {
         # 判断index不等于 0  切当前index元素大于 父级元素 继续上浮
-        while ($index > 0 && $this->data[$this->parent($index) < $this->data[$index]]) {
+        while ($index > 0 && $this->data[$this->parent($index)] < $this->data[$index]) {
             $temp_index = $this->parent($index);
             $this->array->swap($temp_index, $index);
             $index = $temp_index;
         }
     }
 
+    /**
+     * 获取最大值
+     */
+    public function extractMax()
+    {
+        $re = $this->findMax();
+        $this->array->swap(0, $this->getSize() - 1);
+        $this->array->removeLast();
+        $this->siftDown(0);
+        return $re;
+    }
+
+    /**
+     * 替换
+     * @param $e
+     * @return int
+     */
+    public function replace($e)
+    {
+        $re = $this->findMax();
+        $this->array->set(0, $e);
+        $this->siftDown(0);
+        return $re;
+    }
+    /**
+     * 下浮操作
+     * @param $index
+     */
+    private function siftDown($index)
+    {
+        #循环判断 左节点小于数组长度 因为右节点是对应的 + 1 可以在循环中取到
+        while ($this->leftChild($index) < $this->getSize()) {
+            # 获取当前左孩子节点
+            $j = $this->leftChild($index);
+            #判断右节点是否越界 并判断右节点是否大于左节点 大于取右节点
+            if (($j + 1 < $this->getSize()) && $this->array->get($j + 1) > $this->array->get($j)) {
+                $j = $this->rightChild($index);
+            }
+
+            # 判断取出的节点跟当前节点进行比较 终止循环
+            if ($this->array->get($j) <= $this->array->get($index)) {
+                break;
+            }
+            # 互换元素
+            $this->array->swap($index, $j);
+            $index = $j;
+        }
+    }
+    /**
+     * 取出堆顶的元素 最大值
+     * @return int
+     * @throws Exception
+     */
+    public function findMax()
+    {
+        if ($this->isEmpty()) {
+            throw new \Exception('can not heap is null');
+        }
+        return $this->array->get(0);
+    }
     public function print()
     {
         $this->array->print();
