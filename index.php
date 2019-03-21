@@ -227,24 +227,31 @@ $arr->print();*/
 //$end = end_time();
 //echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
 ### 堆排序
+//for ($i = 0; $i < 10; $i ++) {
+//    $arr[] = random_int(1, 10000);
+//}
+//shuffle($arr);
+//print_r($arr);
+//$start = start_time();
+//$heap = new MaxHeap($arr);
+//sleep(1);
+//$end = end_time();
+//echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$heap1 = new MaxHeap();
+//
+//foreach ($arr as $key => $val) {
+//    $heap1->add($val);
+//}
+//sleep(1);
+//$end = end_time();
+//echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+
 for ($i = 0; $i < 10; $i ++) {
-    $arr[] = random_int(1, 10000);
+    $arr[] = random_int(1, 10);
 }
 shuffle($arr);
-print_r($arr);
-$start = start_time();
-$heap = new MaxHeap($arr);
-sleep(1);
-$end = end_time();
-echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$heap1 = new MaxHeap();
-
-foreach ($arr as $key => $val) {
-    $heap1->add($val);
-}
-sleep(1);
-$end = end_time();
-echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+$arr = new SegmentTree($arr);
+$arr->print();
