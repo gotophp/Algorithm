@@ -242,16 +242,69 @@ $arr->print();*/
 //$start = start_time();
 //$heap1 = new MaxHeap();
 //
-//foreach ($arr as $key => $val) {
+//foreach ($arr as $key => $val) {$query_l
 //    $heap1->add($val);
 //}
 //sleep(1);
 //$end = end_time();
 //echo '堆排序 一万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
 
-for ($i = 0; $i < 10; $i ++) {
-    $arr[] = random_int(1, 10);
-}
-shuffle($arr);
-$arr = new SegmentTree($arr);
-$arr->print();
+//for ($i = 0; $i < 3; $i ++) {
+//    $arr[] = random_int(1, 10);
+//}
+//$arr = [2,4,3];
+////shuffle($arr);
+////echo '<pre>';
+////print_r($arr);
+//$arr = new SegmentTree($arr);
+//$arr->print();
+//
+//echo $arr->query(0,1);
+
+# 字典树
+//$node = new TrieTree();
+//$node->add('cat');
+//$node->add('cab');
+//$node->print();
+////var_dump($node->isPrefix('cb'));
+////
+//var_dump($node->match('c.'));
+
+# 并查集
+//
+//$node = new UnionFIndTwo(10);
+//
+////$node->print();
+//
+//$node->unionElements(1,2);
+//
+//$node->print();
+//
+//$node->unionElements(3,4);
+//$node->print();
+//$node->unionElements(4,2);
+//$node->print();
+//
+//
+//var_dump($node->isConnected(1,4));
+
+
+//$node = new UnionFIndThree(10);
+//$node->unionElements(0,1);
+//$node->unionElements(4,2);
+//
+//$node->unionElements(4,0);
+//$node->print();
+
+# AVL 平衡二叉树
+
+$avl = new AVLlBSTMap();
+$avl->add('x','a');
+$avl->add('y','b');
+$avl->add('z','c');
+
+$avl->print();
+
+var_dump($avl->isBST());
+
+var_dump($avl->isBalance());
