@@ -8,7 +8,7 @@
  * AVL树
  * 左右子树的高度不超过 -> 1
  */
-class AVLlBSTMap
+class AVLlBSTTree
 {
     public $root; #虚拟的头节点
     public $size;
@@ -280,13 +280,25 @@ class AVLlBSTMap
     }
 
     /**
-     * remove 删除
+     * remove 删除 再次计算自平衡
      * @param $key
      * @return null
      */
     public function remove($key)
     {
         $this->root = $this->removeNode($this->root, $key);
+    }
+    /**
+     * 递归向left走下去
+     * @param $node
+     * @return mixed
+     */
+    private function serachMin($node)
+    {
+        if ($node->left == null) {
+            return $node;
+        }
+        return $this->serachMin($node->left);
     }
 
     public function removeNode($node, $e)
@@ -297,34 +309,69 @@ class AVLlBSTMap
 
         if ($node->key > $e) {
             $node->left = $this->removeNode($node->left, $e);
-            return $node;
+            $result_node = $node;
         } else if ($node->key < $e) {
             $node->right = $this->removeNode($node->right, $e);
-            return $node;
+            $result_node = $node;
         } else { // ==
+
             if ($node->left == null) {
                 $right = $node->right;
-                $node->left = null;
-                $this->size --;
-                return $right;
-            }
-
-            if ($node->right == null) {
-                $left = $node->left;
                 $node->right = null;
                 $this->size --;
-                return $left;
+                $result_node = $right;
+            } else if ($node->right == null) {
+                $left = $node->left;
+                $node->left = null;
+                $this->size --;
+                $result_node = $left;
+            } else {
+                #找到右子树的后继最小元素
+                $mix = $this->serachMin($node->right);
+                #删除当前节点的最小元素
+                $mix->right = $this->removeNode($node->right, $mix->key);
+                #左边赋值
+                $mix->left = $node->left;
+                #指控
+                $node->left = $node->right = null;
+                $result_node = $mix;
             }
-            #找到右子树的后继最小元素
-            $mix = $this->serachMin($node->right);
-            #删除当前节点的最小元素
-            $mix->right = $this->deleteMin($node->right);
-            #左边赋值
-            $mix->left = $node->left;
-            #指控
-            $node->left = $node->right = null;
-            return $mix;
         }
+        if ($result_node == null) {
+            return null;
+        }
+        # 计算节点的高度
+        $result_node->height = 1 + max($this->getHeight($result_node->left), $this->getHeight($result_node->right));
+
+        # 平衡因子
+        $bala = $this->getBalanceFactor($result_node);
+
+        #判断平衡因子
+        if (abs($bala) > 1) {
+            echo '平衡因子[' . $bala . ']---' . $result_node->val;
+        }
+
+        # 计算平衡因子 LL
+        # 当左子树打破平衡 右循转
+        if ($bala > 1 && $this->getBalanceFactor($result_node->left) >= 0) {
+            return $this->rightRotate($result_node);
+        }
+
+        # 当右子树打破平衡 左循转 RR
+        if ($bala < -1 && $this->getBalanceFactor($result_node->right) <= 0) {
+            return $this->leftRotate($result_node);
+        }
+        # LR 先左循环 再右循环
+        if ($bala > 1 && $this->getBalanceFactor($result_node->left) < 0) {
+            $result_node->left = $this->leftRotate($result_node->left);
+            return $this->rightRotate($result_node);
+        }
+        # RL
+        if ($bala < -1 && $this->getBalanceFactor($result_node->right) <= 0) {
+            $result_node->right = $this->rightRotate($result_node->right);
+            return $this->leftRotate($result_node);
+        }
+        return $result_node;
     }
 
 

@@ -335,14 +335,14 @@ class BST
         } else { // ==
             if ($node->left == null) {
                 $right = $node->right;
-                $node->left = null;
+                $node->right = null;
                 $this->size --;
                 return $right;
             }
 
             if ($node->right == null) {
                 $left = $node->left;
-                $node->right = null;
+                $node->left = null;
                 $this->size --;
                 return $left;
             }

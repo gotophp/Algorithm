@@ -17,6 +17,15 @@ spl_autoload_register(function ($class){
     if (is_file('./Sort/' . $class . '.php')) {
         require_once './Sort/' . $class . '.php';
     }
+    if (is_file('./Map/' . $class . '.php')) {
+        require_once './Map/' . $class . '.php';
+    }
+    if (is_file('./Set/' . $class . '.php')) {
+        require_once './Set/' . $class . '.php';
+    }
+    if (is_file('./UnionFind/' . $class . '.php')) {
+        require_once './UnionFind/' . $class . '.php';
+    }
 });
 function start_time() {
     return microtime(true);
@@ -298,13 +307,21 @@ $arr->print();*/
 
 # AVL 平衡二叉树
 
-$avl = new AVLlBSTMap();
-$avl->add('x','a');
-$avl->add('y','b');
-$avl->add('z','c');
+//$avl = new AVLlBSTTree();
+//$avl->add('x','a');
+//$avl->add('y','b');
+//$avl->add('z','c');
+//
+//$avl->print();
+//
+//var_dump($avl->isBST());
+//$avl_map
+//var_dump($avl->isBalance());
 
-$avl->print();
-
-var_dump($avl->isBST());
-
-var_dump($avl->isBalance());
+//$avl_map = new AVLMap();
+//$avl_map->add('a', 'a');
+//$avl_map->add('b', 'b');
+//$avl_map->add('c', 'c');
+//$avl_map->print();
+//$avl_map->remove('b');
+//$avl_map->print();
