@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b6b6a3-e894-478b-b79b-98c055052e08" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Map/AVLMap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Set/AVLSet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/AVLlBSTMap.php" afterPath="$PROJECT_DIR$/Tree/AVLlBSTTree.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/BSTMap.php" afterPath="$PROJECT_DIR$/Map/BSTMap.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/LinkListMap.php" afterPath="$PROJECT_DIR$/Map/LinkListMap.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/LinkListSet.php" afterPath="$PROJECT_DIR$/Set/LinkListSet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/NodeMap.php" afterPath="$PROJECT_DIR$/Map/NodeMap.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/TreeSet.php" afterPath="$PROJECT_DIR$/Set/TreeSet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFIndFive.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFIndFive.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFIndFour.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFIndFour.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFIndSix.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFIndSix.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFIndThree.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFIndThree.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFIndTwo.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFIndTwo.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tree/UnionFind.php" afterPath="$PROJECT_DIR$/UnionFind/UnionFind.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree/BST.php" afterPath="$PROJECT_DIR$/Tree/BST.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,11 +27,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVLSet.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AVLSet.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Set/AVLSet.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="429">
               <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,16 +92,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-75">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeSet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Set/TreeSet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -163,7 +148,6 @@
         <option value="$PROJECT_DIR$/Struct/LinkListStack.php" />
         <option value="$PROJECT_DIR$/Struct/QueueLinkList.php" />
         <option value="$PROJECT_DIR$/Tree/Node.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Tree/Set.php" />
         <option value="$PROJECT_DIR$/Tree/TreeSet.php" />
         <option value="$PROJECT_DIR$/Tree/LinkListSet.php" />
@@ -192,6 +176,7 @@
         <option value="$PROJECT_DIR$/Tree/AVLlBSTTree.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Set/AVLSet.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -250,66 +235,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="UnionFind" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tree" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Set" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Set" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AVLSet.php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Map" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,7 +414,7 @@
       <workItem from="1552914455818" duration="10665000" />
       <workItem from="1553000387867" duration="8497000" />
       <workItem from="1553093545202" duration="36549000" />
-      <workItem from="1553524627850" duration="3208000" />
+      <workItem from="1553524627850" duration="3692000" />
     </task>
     <task id="LOCAL-00001" summary="归变排序">
       <created>1552666014368</created>
@@ -509,7 +434,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87130000" />
+    <option name="totallyTimeSpent" value="87614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="559" y="49" width="1358" height="771" extended-state="0" />
@@ -712,13 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -970,6 +888,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
