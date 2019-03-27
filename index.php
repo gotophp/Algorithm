@@ -26,6 +26,12 @@ spl_autoload_register(function ($class){
     if (is_file('./UnionFind/' . $class . '.php')) {
         require_once './UnionFind/' . $class . '.php';
     }
+    if (is_file('./RBTree/' . $class . '.php')) {
+        require_once './RBTree/' . $class . '.php';
+    }
+    if (is_file('./Hash/' . $class . '.php')) {
+        require_once './Hash/' . $class . '.php';
+    }
 });
 function start_time() {
     return microtime(true);
@@ -325,3 +331,11 @@ $arr->print();*/
 //$avl_map->print();
 //$avl_map->remove('b');
 //$avl_map->print();
+
+
+
+$hash = new HashTable();
+
+$hash->add('test', 'test');
+
+$hash->print();

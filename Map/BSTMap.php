@@ -81,7 +81,7 @@ class BSTMap
      */
     public function contains($key)
     {
-        return $this->getNode($key) !== null;
+        return $this->getNode($this->root, $key) !== null;
     }
 
     /**
@@ -91,7 +91,7 @@ class BSTMap
      */
     public function getKey($key)
     {
-        $node = $this->getNode($key);
+        $node = $this->getNode($this->root, $key);
         return $node->val ?? null;
     }
 
@@ -103,7 +103,7 @@ class BSTMap
      */
     public function set($key, $val)
     {
-        $node = $this->getNode($key);
+        $node = $this->getNode($this->root, $key);
         if ($node == null) {
             throw new \Exception('key不存在');
         }
