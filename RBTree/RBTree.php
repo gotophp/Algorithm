@@ -5,13 +5,9 @@
  * User: zhuhongwen
  * Date: 2019/3/18
  * Time: 下午9:49
- * 二分搜索树
- *   若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
- *   任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
- *   任意节点的左、右子树也分别为二叉查找树。
- *   没有键值相等的节点（no duplicate nodes）。
+ * 红黑树
  */
-class BST
+class RBTree
 {
     private $root; #根节点
     private $size; #维护对应的数字
@@ -40,6 +36,54 @@ class BST
         return $this->size == 0;
     }
 
+    private function isRed($node)
+    {
+        if ($node->color == NodeRBTree::RED) {
+            return NodeRBTree::RED;
+        }
+        return NodeRBTree::BLACK;
+    }
+
+    /**
+     * 左旋转
+     * @param $node
+     * @return mixed
+     */
+    public function leftRotate($node)
+    {
+        $x = $node->right;
+
+        $node->right = $x->left;
+        $x->left = $node;
+        $x->color = $node->color;
+        $node->color = NodeRBTree::RED;
+        return $x;
+    }
+
+    /**
+     * 右旋转
+     * @param $node
+     * @return mixed
+     */
+    public function rightRotate($node)
+    {
+        $x = $node->left;
+        $node->left = $x->right;
+        $x->right = $node;
+        $x->color = $node->color;
+        $node->color = NodeRBTree::RED;
+        return $x;
+    }
+    /**
+     *颜色的反转
+     * @param $node
+     */
+    public function filpColors($node)
+    {
+        $node->color = NodeRBTree::RED;
+        $node->left->color = NodeRBTree::BLACK;
+        $node->right->color = NodeRBTree::BLACK;
+    }
     /**
      * 添加节点
      * @param $e
@@ -47,6 +91,8 @@ class BST
     public function add($e)
     {
         $this->root = $this->insert($this->root, $e);
+        # 最终根节点是黑色的
+        $this->root = NodeRBTree::BLACK;
     }
 
     /**
@@ -58,7 +104,7 @@ class BST
     {
         if ($node == null) {
             $this->size ++;
-            return new NodeTree($e);
+            return new NodeRBTree($e);
         }
         if ($node->e > $e) {
             $node->left = $this->insert($node->left, $e);
@@ -74,7 +120,7 @@ class BST
      */
     public function contains($e): bool
     {
-       return $this->serach($this->root, $e);
+        return $this->serach($this->root, $e);
     }
 
     /**

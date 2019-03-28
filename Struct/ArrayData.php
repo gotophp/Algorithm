@@ -31,6 +31,12 @@ Class ArrayData
         $this->resize = $resize;
     }
 
+
+    public function newArr($arr = [])
+    {
+        $this->data = $arr;
+        $this->size = count($arr);
+    }
     /**
      * 获取数组中存储的个数
      * size 是从0开头 记住
@@ -261,5 +267,27 @@ Class ArrayData
     private function resize($length): void
     {
         $this->length = $length;
+    }
+
+    /**
+     * 数组互换
+     * @param $i
+     * @param $j
+     * @throws Exception
+     */
+    public function swap($i, $j)
+    {
+        if ($i < 0 || $i >= $this->size || $j < 0 || $j >= $this->size) {
+            throw new \Exception(__FUNCTION__ . '的index 超出边界！！！');
+        }
+        $temp = $this->data[$j];
+        $this->data[$j] = $this->data[$i];
+        $this->data[$i] = $temp;
+    }
+
+
+    public function getArray()
+    {
+        return $this->data;
     }
 }
