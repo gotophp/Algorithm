@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: zhuhongwen
@@ -28,48 +29,48 @@ function sub($start, $end) {
     return round($end - $start,4);
 }
 #排序比较
-$arr = range(1,1000);
+$arr = range(1,1000000);
 shuffle($arr);
 
-$start = start_time();
-$bub = new BubSort($arr);
-$bub->bubSort();
-$end = end_time();
-echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new InsSort($arr);
-$bub->insSort();
-$end = end_time();
-echo '插入排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new SelSort($arr);
-$bub->selSort();
-$end = end_time();
-echo '选择排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new QuiSort($arr);
-$bub->quiSort();
-$end = end_time();
-echo '快速排序1 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-$start = start_time();
-$bub = new QuiSort1($arr);
-$bub->quiSort();
-$end = end_time();
-echo '快速排序2 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
-
-
-$start = start_time();
-$bub = new MegSort($arr);
-$bub->megSort();
-$end = end_time();
-echo '归并排序一百万条记录对比-> '. sub($start, $end) . '秒';
+//$start = start_time();
+//$bub = new BubSort($arr);
+//$bub->bubSort();
+//$end = end_time();
+//echo '冒泡排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new InsSort($arr);
+//$bub->insSort();
+//$end = end_time();
+//echo '插入排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new SelSort($arr);
+//$bub->selSort();
+//$end = end_time();
+//echo '选择排序 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new QuiSort($arr);
+//$bub->quiSort();
+//$end = end_time();
+//echo '快速排序1 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//$start = start_time();
+//$bub = new QuiSort1($arr);
+//$bub->quiSort();
+//$end = end_time();
+//echo '快速排序2 一百万条记录对比-> '. sub($start, $end) . '秒' .PHP_EOL;
+//
+//
+//$start = start_time();
+//$bub = new MegSort($arr);
+//$bub->megSort();
+//$end = end_time();
+//echo '归并排序一百万条记录对比-> '. sub($start, $end) . '秒';
 ### 数组调试
 /*$arr = new ArrayData(5, true);
 $arr->addFirst(1);
